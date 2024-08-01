@@ -10,13 +10,12 @@ export const LLMNode = ({ id, data }) => {
 
   const style = {
     node: {
-      backgroundColor: '#2E3B55', // Dynamic node background color
-      color: '#fff', // Dynamic text color
+      backgroundColor: '#2E3B55', // Dynamic styles node 
+      color: '#fff',
       minHeight:"100px"
     },
     handle: {
       // Dynamic styles for handles
-      cursor: 'pointer',
     },
   };
 

@@ -24,7 +24,7 @@ export const TextNode = ({ id, data }) => {
       const newHandles = matches.map(match => `${id}-${match.replace(/{{\s*|\s*}}/g, '')}`);
 
       // Update output handles
-      setInputHandles([`${id}-output`, ...newHandles]);
+      setInputHandles([`${id}-input`, ...newHandles]);
     }
 
   }, [currText]);
@@ -34,9 +34,9 @@ export const TextNode = ({ id, data }) => {
     <BaseNode
       id={id}
       title="Text"
-      inputHandles={inputHandles}  // No input handles for this node
-      outputHandles={[]}  // Output handle for the value
-      style={{ minHeight: `${100 + inputHandles.length * 30}px` }} // Adjust height based on number of output handles
+      inputHandles={inputHandles} 
+      outputHandles={[]}
+      style={{ minHeight: `${100 + inputHandles.length * 30}px` }} // Adjust height based on number of input handles
     >
       <TextField
         multiline

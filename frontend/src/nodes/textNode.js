@@ -23,8 +23,8 @@ export const TextNode = ({ id, data }) => {
       // Create handles based on matches, removing curly braces
       const newHandles = matches.map(match => `${id}-${match.replace(/{{\s*|\s*}}/g, '')}`);
 
-      // Update output handles
-      setInputHandles([`${id}-input`, ...newHandles]);
+      // Update intput handles
+      setInputHandles([...new Set([`${id}-input`, ...newHandles])]);
     }
 
   }, [currText]);

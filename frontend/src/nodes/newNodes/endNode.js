@@ -7,7 +7,7 @@ export const EndNode = ({ id }) => {
       id={id}
       title="End"
       inputHandles={[`${id}-prev`]}
-      outputHandles={[]}
+      outputHandles={[`${id}-next`]}
     >
       <Box>
         <Typography style={{ color: '#FFFFFF' }}>

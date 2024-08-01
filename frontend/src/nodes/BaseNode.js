@@ -1,15 +1,17 @@
 import { Handle, Position } from 'reactflow';
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 
-const BaseNode = ({ id, title, children, inputHandles, outputHandles, handlePositions = { input: [] }, style = {} }) => {
+const BaseNode = ({ id, title, children, inputHandles, outputHandles, style = {} }) => {
+    const handleSpacing = 30;
     return (
-        <div elevation={3} 
+        <div elevation={3}
             style={{
                 width: 240,
                 padding: '20px',
                 backgroundColor: '#2E3B55',
                 borderRadius: '8px',
-                ...style.node
+                ...style.node,
+                ...style,
             }}
         >
             <Typography variant="h6" style={{ color: '#FFFFFF' }}>{title}</Typography>
@@ -20,16 +22,16 @@ const BaseNode = ({ id, title, children, inputHandles, outputHandles, handlePosi
                     type="target"
                     position={Position.Left}
                     id={handleId}
-                    style={{ top: handlePositions.input[index], ...style.handle }} // Apply dynamic styles
+                    style={{ top: `${60 + index * handleSpacing}px`, ...style.handle }} // Apply dynamic styles
                 />
             ))}
-            {outputHandles.map((handleId) => (
+            {outputHandles.map((handleId, index) => (
                 <Handle
                     key={handleId}
                     type="source"
                     position={Position.Right}
                     id={handleId}
-                    style={{ ...style.handle }} // Apply dynamic styles
+                    style={{ top: `${60 + index * handleSpacing}px`, ...style.handle }} // Apply dynamic styles
                 />
             ))}
         </div>

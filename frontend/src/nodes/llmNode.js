@@ -8,15 +8,11 @@ export const LLMNode = ({ id, data }) => {
   const inputHandles = [`${id}-system`, `${id}-prompt`];
   const outputHandles = [`${id}-response`];
 
-  const handlePositions = {
-    input: ['33%', '66%'], // Positions for the input handles (system, prompt)
-  };
-
-
   const style = {
     node: {
       backgroundColor: '#2E3B55', // Dynamic node background color
       color: '#fff', // Dynamic text color
+      minHeight:"100px"
     },
     handle: {
       // Dynamic styles for handles
@@ -30,7 +26,6 @@ export const LLMNode = ({ id, data }) => {
       title="LLM"
       inputHandles={inputHandles}
       outputHandles={outputHandles}
-      handlePositions={handlePositions} // Pass handle positions
       style={style} // Pass dynamic styles
     >
       <Typography variant="body1" style={{ color: '#FFFFFF' }}>This is a LLM.</Typography>

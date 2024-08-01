@@ -10,8 +10,18 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
+//New Nodes
+import { StartNode } from './nodes/newNodes/startNode';
+import { EndNode } from './nodes/newNodes/endNode';
+import { DecisionNode } from './nodes/newNodes/decisionNode';
+import { ProcessNode } from './nodes/newNodes/processNode';
+import { NotifyNode } from './nodes/newNodes/notifyNode';
+
 
 import 'reactflow/dist/style.css';
+
+
+
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -20,6 +30,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  start: StartNode,
+  end: EndNode,
+  decision: DecisionNode,
+  process: ProcessNode,
+  notify: NotifyNode,
 };
 
 const selector = (state) => ({

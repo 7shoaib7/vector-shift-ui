@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import BaseNode from './BaseNode';
+import { TextField, MenuItem } from '@mui/material';
 
 export const OutputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(data?.outputName || id.replace('customOutput-', 'output_'));
@@ -16,29 +17,51 @@ export const OutputNode = ({ id, data }) => {
   };
 
   return (
-    <BaseNode 
+    <BaseNode
       id={id}
-      title="Output" 
+      title="Output"
       inputHandles={[`${id}-value`]}  // Input handle for the value
       outputHandles={[]}  // No output handles for this node
     >
-      <div>
-        <label>
-          Name:
-          <input 
-            type="text" 
-            value={currName} 
-            onChange={handleNameChange} 
-          />
-        </label>
-        <label>
-          Type:
-          <select value={outputType} onChange={handleTypeChange}>
-            <option value="Text">Text</option>
-            <option value="File">File</option>
-          </select>
-        </label>
-      </div>
+      <TextField
+        label="Name"
+        value={currName}
+        onChange={handleNameChange}
+        fullWidth
+        margin="normal"
+        size="small"
+        variant="outlined"
+        InputLabelProps={{ style: { color: '#FFFFFF' } }} // Label color
+        InputProps={{
+          style: {
+            color: '#FFFFFF', // Text color
+            backgroundColor: '#2E2E2E',
+            borderRadius: '5px',
+          },
+        }}
+      />
+      <TextField
+        select
+        label="Type"
+        value={outputType}
+        onChange={handleTypeChange}
+        fullWidth
+        margin="normal"
+        size="small"
+        variant="outlined"
+        InputLabelProps={{ style: { color: '#FFFFFF' } }} // Label color
+        InputProps={{
+          style: {
+            color: '#FFFFFF', // Text color
+            backgroundColor: '#2E2E2E',
+            borderRadius: '5px',
+          },
+        }}
+        className="nodrag nopan"
+      >
+        <MenuItem value="Text">Text</MenuItem>
+        <MenuItem value="File">File</MenuItem>
+      </TextField>
     </BaseNode>
   );
 };

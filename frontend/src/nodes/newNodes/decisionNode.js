@@ -1,4 +1,6 @@
 import BaseNode from "../BaseNode";
+import { Typography, Box } from '@mui/material';
+
 
 export const DecisionNode = ({ id }) => {
     return (
@@ -8,9 +10,11 @@ export const DecisionNode = ({ id }) => {
             inputHandles={[`${id}-input`]}
             outputHandles={[`${id}-yes`, `${id}-no`]}
         >
-            <div>
-                <span>Is the condition met?</span>
-            </div>
-        </BaseNode>
+            <Box>
+                <Typography style={{ color: '#FFFFFF' }}>
+                    Is the condition met?
+                </Typography>
+            </Box>
+        </BaseNode >
     );
 };

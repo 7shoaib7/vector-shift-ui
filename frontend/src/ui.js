@@ -11,15 +11,15 @@ import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
 //New Nodes
-import { StartNode } from './nodes/newNodes/startNode';
-import { EndNode } from './nodes/newNodes/endNode';
-import { DecisionNode } from './nodes/newNodes/decisionNode';
+import { StartNode } from './nodes/newNodes/StartNode';
+import { EndNode } from './nodes/newNodes/EndNode';
+import { DecisionNode } from './nodes/newNodes/DecisionNode';
 import { ProcessNode } from './nodes/newNodes/processNode';
 import { NotifyNode } from './nodes/newNodes/notifyNode';
 
 
-import 'reactflow/dist/style.css';
 
+import 'reactflow/dist/style.css';
 
 
 

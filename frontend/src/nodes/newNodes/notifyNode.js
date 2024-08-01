@@ -1,4 +1,5 @@
 import BaseNode from '../BaseNode';
+import { Typography, Box } from '@mui/material';
 
 export const NotifyNode = ({ id }) => {
   return (
@@ -8,9 +9,11 @@ export const NotifyNode = ({ id }) => {
       inputHandles={[`${id}-input`]} 
       outputHandles={[`${id}-output`]} 
     >
-      <div>
-        <span>Notify user or system!</span>
-      </div>
+      <Box>
+        <Typography style={{ color: '#FFFFFF' }}>
+        Notify user or system!
+        </Typography>
+      </Box>
     </BaseNode>
   );
 };

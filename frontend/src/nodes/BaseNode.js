@@ -1,11 +1,18 @@
 import { Handle, Position } from 'reactflow';
+import { Typography } from '@mui/material';
 
-const BaseNode = ({ id, title, children, inputHandles, outputHandles,handlePositions = { input: [] }, style = {} }) => {
+const BaseNode = ({ id, title, children, inputHandles, outputHandles, handlePositions = { input: [] }, style = {} }) => {
     return (
-        <div style={{ width: 200, height: 80, border: '1px solid black', ...style.node }}>
-            <div>
-                <span>{title}</span>
-            </div>
+        <div elevation={3} 
+            style={{
+                width: 240,
+                padding: '20px',
+                backgroundColor: '#2E3B55',
+                borderRadius: '8px',
+                ...style.node
+            }}
+        >
+            <Typography variant="h6" style={{ color: '#FFFFFF' }}>{title}</Typography>
             <div>{children}</div>
             {inputHandles.map((handleId, index) => (
                 <Handle

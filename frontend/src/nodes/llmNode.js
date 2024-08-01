@@ -1,6 +1,7 @@
 // llmNode.js
 
 import BaseNode from './BaseNode';
+import { Typography } from '@mui/material';
 
 export const LLMNode = ({ id, data }) => {
 
@@ -14,7 +15,7 @@ export const LLMNode = ({ id, data }) => {
 
   const style = {
     node: {
-      backgroundColor: '#1C2536', // Dynamic node background color
+      backgroundColor: '#2E3B55', // Dynamic node background color
       color: '#fff', // Dynamic text color
     },
     handle: {
@@ -24,17 +25,15 @@ export const LLMNode = ({ id, data }) => {
   };
 
   return (
-    <BaseNode 
+    <BaseNode
       id={id}
-      title="LLM" 
-      inputHandles={inputHandles}  
-      outputHandles={outputHandles}  
+      title="LLM"
+      inputHandles={inputHandles}
+      outputHandles={outputHandles}
       handlePositions={handlePositions} // Pass handle positions
       style={style} // Pass dynamic styles
     >
-      <div>
-        <span>This is a LLM.</span>
-      </div>
+      <Typography variant="body1" style={{ color: '#FFFFFF' }}>This is a LLM.</Typography>
     </BaseNode>
   );
 }

@@ -1,16 +1,19 @@
 import BaseNode from '../BaseNode';
+import { Typography, Box } from '@mui/material';
 
 export const EndNode = ({ id }) => {
   return (
-    <BaseNode 
+    <BaseNode
       id={id}
-      title="End" 
-      inputHandles={[`${id}-prev`]} 
-      outputHandles={[]} 
+      title="End"
+      inputHandles={[`${id}-prev`]}
+      outputHandles={[]}
     >
-      <div>
-        <span>This is the end of the process.</span>
-      </div>
+      <Box>
+        <Typography style={{ color: '#FFFFFF' }}>
+          This is the end of the process.
+        </Typography>
+      </Box>
     </BaseNode>
   );
 };

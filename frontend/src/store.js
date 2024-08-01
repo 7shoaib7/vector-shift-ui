@@ -21,7 +21,6 @@ export const useStore = create((set, get) => ({
         }
         newIDs[type] += 1;
         set({nodeIDs: newIDs});
-        console.log("getNodeID",`${type}-${newIDs[type]}`)
         return `${type}-${newIDs[type]}`;
     },
     
